@@ -5,8 +5,9 @@ import android.app.Application;
 import com.example.daggermvp.di.components.ApplicationComponent;
 import com.example.daggermvp.di.components.DaggerApplicationComponent;
 import com.example.daggermvp.di.module.ApplicationModule;
+import com.example.daggermvp.utilities.Constants;
 
-public class CakeApplication extends Application {
+public class CountryApplication extends Application {
 
     private ApplicationComponent mApplicationComponent;
 
@@ -19,7 +20,7 @@ public class CakeApplication extends Application {
     private void initializeApplicationComponent() {
         mApplicationComponent = DaggerApplicationComponent
                 .builder()
-                .applicationModule(new ApplicationModule(this, "https://gist.githubusercontent.com"))
+                .applicationModule(new ApplicationModule(this, Constants.baseURL))
                 .build();
     }
 

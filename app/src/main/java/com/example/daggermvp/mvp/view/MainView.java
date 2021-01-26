@@ -1,12 +1,12 @@
 package com.example.daggermvp.mvp.view;
 
-import com.example.daggermvp.mvp.model.Cake;
+import com.example.daggermvp.mvp.model.Country;
 
 import java.util.List;
 
 public interface MainView extends BaseView {
 
-    void onCakeLoaded(List<Cake> cakes);
+    void onCakeLoaded(List<Country> cakes);
 
     void onShowDialog(String message);
 
@@ -14,5 +14,5 @@ public interface MainView extends BaseView {
 
     void onShowToast(String message);
 
-    //void onClearItems();
+    void onClearItems();
 }

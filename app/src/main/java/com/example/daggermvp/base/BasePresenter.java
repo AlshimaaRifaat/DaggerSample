@@ -1,6 +1,9 @@
 package com.example.daggermvp.base;
 
+import com.example.daggermvp.mvp.model.CountriesResponse;
 import com.example.daggermvp.mvp.view.BaseView;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -18,7 +21,7 @@ public class BasePresenter<V extends BaseView> {
         return mView;
     }
 
-    protected <T> void subscribe(Observable<T> observable, Observer<T> observer) {
+    protected <T> void subscribe(Observable<List<CountriesResponse>> observable, Observer observer) {
         observable.subscribeOn(Schedulers.newThread())
                 .toSingle()
                 .observeOn(AndroidSchedulers.mainThread())

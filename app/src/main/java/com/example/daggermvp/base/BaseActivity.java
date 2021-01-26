@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.daggermvp.application.CakeApplication;
+import com.example.daggermvp.application.CountryApplication;
 import com.example.daggermvp.di.components.ApplicationComponent;
 
 import butterknife.ButterKnife;
@@ -32,21 +32,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         //To be used by child activities
     }
 
-    @Override
-    protected void onDestroy() {
-       // ButterKnife.un(this);
-        super.onDestroy();
-    }
 
     protected void resolveDaggerDependency() {}
 
-    protected void showBackArrow() {
-        ActionBar supportActionBar = getSupportActionBar();
-        if (supportActionBar != null) {
-            supportActionBar.setDisplayHomeAsUpEnabled(true);
-            supportActionBar.setDisplayShowHomeEnabled(true);
-        }
-    }
 
     protected void showDialog(String message) {
         if (mProgressDialog == null) {
@@ -65,7 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected ApplicationComponent getApplicationComponent() {
-        return ((CakeApplication) getApplication()).getApplicationComponent();
+        return ((CountryApplication) getApplication()).getApplicationComponent();
     }
 
     protected abstract int getContentView();

@@ -12,7 +12,8 @@
         android:layout_height="80dp"
         android:background="#F8F8F8"
         android:scaleType="fitXY"
-        android:padding="5dp" />
+        android:padding="5dp"
+        android:layerType="software"/>
 
     <LinearLayout
         android:layout_width="0dp"

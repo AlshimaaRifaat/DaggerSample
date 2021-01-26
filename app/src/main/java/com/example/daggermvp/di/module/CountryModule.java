@@ -1,6 +1,6 @@
 package com.example.daggermvp.di.module;
 
-import com.example.daggermvp.api.CakeApiService;
+import com.example.daggermvp.api.CountryApiService;
 import com.example.daggermvp.di.scope.PerActivity;
 import com.example.daggermvp.mvp.view.MainView;
 
@@ -9,18 +9,18 @@ import dagger.Provides;
 import retrofit2.Retrofit;
 
 @Module
-public class CakeModule {
+public class CountryModule {
 
     private MainView mView;
 
-    public CakeModule(MainView view) {
+    public CountryModule(MainView view) {
         mView = view;
     }
 
     @PerActivity
     @Provides
-    CakeApiService provideApiService(Retrofit retrofit) {
-        return retrofit.create(CakeApiService.class);
+    CountryApiService provideApiService(Retrofit retrofit) {
+        return retrofit.create(CountryApiService.class);
     }
 
     @PerActivity
