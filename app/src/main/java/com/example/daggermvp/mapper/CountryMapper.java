@@ -25,7 +25,7 @@ public class CountryMapper {
                     mCountry.setCapital(country.getCapital());
                     mCountry.setFlag(country.getFlag());
                     mCountry.setPopulation(country.getPopulation());
-                   storage.addCountry(mCountry);
+                    storage.addCountry(mCountry);
                     countryArrayList.add(mCountry);
 
             }
